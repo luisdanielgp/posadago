@@ -1,13 +1,6 @@
 from django.db import models
-import datetime
 
 # Create your models here.
-
-
-class Asistente(models.Model):
-    id = models.Autofield(primary_key=True)
-    nombre = models.CharField(max_length=50)
-    insumo = models.CharField()
 
 
 class Posada(models.Model):
@@ -15,4 +8,10 @@ class Posada(models.Model):
     nombre = models.CharField(max_length=50)
     fecha = models.DateField()
     hora = models.DateTimeField()
-    insumos_asistentes =
+
+
+class Asistente(models.Model):
+    id = models.Autofield(primary_key=True)
+    nombre = models.CharField(max_length=50)
+    posada = models.ForeignKey(Posada, on_delete=models.CASCADE, related_name="asistentes")
+    insumo = models.CharField(max_length=50)
