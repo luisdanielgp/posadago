@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'posadas',
     'corsheaders',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -148,4 +149,3 @@ CORS_ALLOW_HEADERS = (
    'x-csrftoken',
    'x-requested-with',
 )
-

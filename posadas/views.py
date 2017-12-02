@@ -4,10 +4,12 @@ from rest_framework import status
 from rest_framework.response import Response
 from .models import Posada
 from django.http import Http404
+from .serializers import PosadaModelSerializer
+
 
 class ListarPosadas(APIView):
     '''
-    Este endpoint trae todos los artistas
+    Este endpoint trae todas las posadas
     '''
 
     def get(self, request):
@@ -24,7 +26,7 @@ class ListarPosadas(APIView):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class   PosadaIndividual(APIView):
+class PosadaIndividual(APIView):
 
     def _get_posada(self, id):
         try:
